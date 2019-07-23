@@ -1,0 +1,143 @@
+html,
+body,
+div,
+section,
+article,
+aside,
+header,
+hgroup,
+footer,
+nav,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+p {
+  font-size: 1em;
+  line-height: 2;
+  margin: 0 0 1em;
+}
+
+body {
+  text-align: center;
+  font: 100% DroidSerif, Georgia, 'Times New Roman', Times, serif;
+  background: #3c6b92;
+  background: -moz-linear-gradient(top, #3c6b92 15%, #e1d8b9 90%);
+  background: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(15%, #3c6b92),
+      color-stop(90%, #e1d8b9));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c6b92', endColorstr='#e1d8b9', GradientType=0);
+  margin: 0;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* ^2 ------ global classes -------- */
+
+.callOut {
+  background: #e1d8b9;
+  padding: 25px;
+  margin-bottom: 25px;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 20px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 20px;
+  -moz-border-radius-bottomleft: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 0px;
+  width: 385px;
+}
+
+#secondaryContent {
+  width: 400px;
+  margin-top: 0;
+}
+
+#secondaryContent h1 {
+  margin: 1em 0 0.5em;
+  padding-top: 2em;
+  border-top: 2px solid #999;
+}
+
+#secondaryContent h1:first-child {
+  border: none;
+  padding-top: 0;
+  margin: 0 0 0.25em;
+}
+
+#secondaryContent {
+  float: left;
+  margin-top: 50px;
+  width: 440px;
+  padding-left: 25px;
+}
+
+/* secondaryContent ^5g */
+#secondaryContent #weather img.fallback {
+  width: 100%;
+  float: none;
+}
+
+#secondaryContent #weather .tempF {
+  font-style: normal;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#secondaryContent h1 {
+  font: normal 1.5em DejaVuSans, Arial, sans-serif;
+  font-weight: normal;
+  color: #3c6b92;
+  padding-bottom: 0.1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #3c6b92;
+}
+
+#secondaryContent #specials h2,
+#secondaryContent #weather h2 {
+  font-size: 1.2em;
+  font-family: DejaVuSansCond, Arial, sans-serif;
+  color: #193742;
+  margin-bottom: 0;
+  border-top: 2px solid #999;
+  padding-top: 1em;
+  font-weight: normal;
+  clear: both;
+  letter-spacing: 1px;
+}
+
+#secondaryContent #specials h2.top,
+#secondaryContent #weather h2.top {
+  border: none;
+  margin-top: 1em;
+}
+
+#secondaryContent #specials p,
+#secondaryContent #weather p {
+  font-style: italic;
+  text-align: right;
+  margin: 0.5em 0;
+  line-height: 1.6;
+}
+
+#secondaryContent #specials img,
+#secondaryContent #weather img {
+  float: left;
+  padding-bottom: 1em;
+  padding-right: 2em;
+}
