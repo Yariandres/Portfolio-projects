@@ -1131,12 +1131,5 @@
 		"TotalUnits": "0",
 		"Sales": "0.00",
 		"ACoS": "0.00%"
-	},
-	{
-		"RecordID": "Version",
-		"RecordType": "Version (1.0)"
-	},
-	{
-		"RecordID": ""
 	}
 ]
