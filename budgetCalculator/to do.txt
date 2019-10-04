@@ -1,0 +1,22 @@
+## TASKS TO DO ##
+
+[] Add event handler
+[] Get input values
+[] Add the new item to our data structure
+[] Add the new item to the UI
+[] Calculate budget
+[] Update the UI 
+
+## STRUCTURE ##
+
+MODULES-UI
+[] get input values
+[] Add the new item to the UI
+[] Update the UI
+
+MODULES-DATA
+[] Add the new item to our data structure
+[] Calculate budget
+
+MODULE-CONTROLLER
+[] Add event handler
