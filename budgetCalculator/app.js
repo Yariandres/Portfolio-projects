@@ -7,14 +7,27 @@ var budgetController = (function () {
 // UI CONTROLLER 
 var UIController = (function () {
 
+  // DOMstrings returns an object. A central place for all the strings 
+  var DOMstrings = {
+    inputType: ".add__type",
+    inputDescription: ".add__description",
+    inputValue: ".add__value",
+    inputBtn: '.add__btn'
+  }
+
   return {
     getInput: function () {
       // Returning an object from the getInput function as there is more than one value
       return {
-        type: document.querySelector(".add__type").value, // Will be either Inc or Exp
-        description: document.querySelector(".add__description").value,
-        value: document.querySelector(".add__value").value,
+        type: document.querySelector(DOMstrings.inputType).value, // Will be either Inc or Exp
+        description: document.querySelector(DOMstrings.inputDescription).value,
+        value: document.querySelector(DOMstrings.inputValue).value,
       }
+    },
+
+    // Exposing DOMstrings into the public
+    getDOMstring: function () {
+      return DOMstrings;
     }
   };
 
@@ -22,6 +35,8 @@ var UIController = (function () {
 
 // GLOBAL APP CONTROLLER THE PLACE WHERE WE TELL THE OTHER MODULES WHAT TO DO
 var controller = (function (budgetCtrl, UICtrl) {
+
+  var DOM = UICtrl.getDOMstring();
 
   var ctrLAddItem = function () {
     // 1. get the field input data from the UIController
@@ -38,7 +53,7 @@ var controller = (function (budgetCtrl, UICtrl) {
 
   }
 
-  document.querySelector('.add__btn').addEventListener("click", ctrLAddItem);
+  document.querySelector(DOM.inputBtn).addEventListener("click", ctrLAddItem);
 
   // keypress event on "enter"
   document.addEventListener("keypress", function (event) {
