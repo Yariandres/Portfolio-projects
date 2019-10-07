@@ -24,7 +24,6 @@ var UIController = (function () {
         value: document.querySelector(DOMstrings.inputValue).value,
       }
     },
-
     // Exposing DOMstrings into the public
     getDOMstring: function () {
       return DOMstrings;
@@ -50,7 +49,6 @@ var controller = (function (budgetCtrl, UICtrl) {
     // 4. Calculate the budged 
 
     // 5. Display the budget on the UI
-
   }
 
   document.querySelector(DOM.inputBtn).addEventListener("click", ctrLAddItem);

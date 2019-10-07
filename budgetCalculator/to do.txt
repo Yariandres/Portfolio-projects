@@ -10,7 +10,7 @@
 ## STRUCTURE ##
 
 MODULES-UI
-[] get input values
+[] Get input values
 [] Add the new item to the UI
 [] Update the UI
 
