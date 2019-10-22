@@ -82,6 +82,7 @@ var UIController = (function () {
       return {
         type: document.querySelector(DOMstrings.inputType).value, // Will be either Inc or Exp
         description: document.querySelector(DOMstrings.inputDescription).value,
+        // converting the string to a number with parsFloat
         value: parseFloat(document.querySelector(DOMstrings.inputValue).value),
       }
     },
@@ -97,7 +98,7 @@ var UIController = (function () {
                   <div class="right clearfix">
                       <div class="item__value">%value%</div>
                       <div class="item__delete">
-                          <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                        <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
                       </div>
                   </div>
                 </div>`;
@@ -110,7 +111,7 @@ var UIController = (function () {
                       <div class="item__value">%value%</div>
                       <div class="item__percentage">21%</div>
                       <div class="item__delete">
-                          <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                        <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
                       </div>
                   </div>
               </div>`;
@@ -126,16 +127,19 @@ var UIController = (function () {
 
     clearFields: function () {
       var fields, fieldsArr;
-
+      // getting a ref to the fields
       fields = document.querySelectorAll(DOMstrings.inputDescription + ", " + DOMstrings.inputValue);
 
+      // convert to array trick
       fieldsArr = Array.prototype.slice.call(fields);
 
+      // loop over
       fieldsArr.forEach((current, index, array) => {
+        // empty the fields
         current.value = "";
       });
 
-      // sets the focus to the description field
+      // sets the focus to the "add description" field
       fieldsArr[0].focus();
     },
 
@@ -165,7 +169,7 @@ var controller = (function (budgetCtrl, UICtrl) {
   var updateBudget = function () {
     // 1. Calculate the budged    
 
-    // 2. return the budget
+    // 2. Return the budget
 
     // 3. Display the budget on the UI
   }
@@ -180,11 +184,11 @@ var controller = (function (budgetCtrl, UICtrl) {
       newItem = budgetCtrl.addItem(input.type, input.description, input.value);
       // 3. Add the item to the UI 
       UICtrl.addListItem(newItem, input.type);
-      // 4. clear the fileds
+      // 4. calling the clear the fileds UI function
       UICtrl.clearFields();
       // 5. calculate and update budget
       updateBudget();
-    }
+    };
   };
 
   // Public initializacion function
