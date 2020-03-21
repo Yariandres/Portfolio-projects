@@ -6,72 +6,54 @@ window.onload = async () => {
   createDataList(rowData)
 }
 
-
-handleBidCalculation = () => {   
-  let spend = document.querySelector('#spend').innerHTML;
-  let clicks = document.querySelector('#clicks').innerHTML;
-  let target = document.querySelector('#targetACoS').innerHTML;
-  let acos = document.querySelector('#currentAcos').innerHTML;
-  let result = spend / clicks * target / parseFloat(acos);
-  
-  document.querySelector("#bidResult").innerHTML = result.toFixed(2);
-}
-
-
 createDataList =  rowList => {
-  console.log(rowData);
   const html = rowList.map(rowData => `
-    <tr>
-      <th scope="row">${rowData.Campaign}</th>
-      <td>${rowData.KeywordorProductTargeting}</td>
-      <td id="spend">${rowData.Spend}</td>
-      <td id="clicks">${rowData.Clicks}</td>
-      <td id="targetACoS">25</td>
-      <td id="currentAcos">${rowData.ACoS}</td>
-      <td>
-        <p id="btnAction" class="btn btn-info" onclick="handleBidCalculation()">
-          Fix
-        </p>
-      </td>
-      <td id="bidResult"></td>
-    </tr>
+      <tr>
+        <th scope="row">${rowData.Campaign}</th>
+        <td id="recordID">${rowData.RecordID}</td>
+        <td>${rowData.KeywordorProductTargeting}</td>
+        <td id="spend">${rowData.Spend}</td>
+        <td id="clicks">${rowData.Clicks}</td>
+        <td id="targetACoS">31</td>
+        <td id="currentAcos">${rowData.ACoS}</td>
+        <td>
+          <p id="btnAction" class="btn btn-info" onclick="addRowHandlers()">
+            Fix
+          </p>
+        </td>
+        <td id="bidResult"></td>
+      </tr>
     `);
 
     document.querySelector('#tableColumn').innerHTML = html;
 }
 
 
+addRowHandlers = () => {
 
-  // let spendValue, clicksValue, targetValue, acosValue;
-  // spendValue = parseFloat(spend);
-  // clicksValue = parseFloat(clicks);
-  // targetValue = parseFloat(target);
-  // acosValue = parseFloat(acos);  
-  // let result = spendValue / clicksValue * targetValue / acosValue;
+  let table = document.getElementById("tableId");
+  let rows = table.getElementsByTagName("tr");
 
+  for (i = 0; i < rows.length; i++) {
+    let currentRow = table.rows[i];
 
+    let createClickHandler = function(row) {
+      return function() {
+        let spend = row.querySelector("#spend").innerHTML;
+        let clicks = row.querySelector("#clicks").innerHTML;
+        let target = row.querySelector("#targetACoS").innerHTML;
+        let acos = row.querySelector("#currentAcos").innerHTML;
 
-// Http.open("GET", "data/bulk-template.json", true);
-// Http.send();
+        let resultHTML = parseFloat(spend) / parseFloat(clicks) * parseFloat(target) / parseFloat(acos);
 
-// calculate = () => {
+        let bid = row.querySelector("#bidResult");
+        bid.innerHTML = resultHTML.toFixed(2);       
+      }
+    }
+    currentRow.onclick = createClickHandler(currentRow);
+  }
+}
 
-//  preventDefault();
-
-//   // getting spen value
-//   spendValue = document.querySelector('#spend').innerText;
-
-//   // Converting Strings to Numbers
-//   valueAsNum = parseFloat(spendValue);
-//   console.log(valueAsNum);
-
-//   // getting the number of clicks
-//   numOfClicks = document.querySelector('#clicks').innerText;
-
-//   // Converting Strings to Numbers
-//   clickAsNum = parseFloat(numOfClicks);
-
-//   console.log(clickAsNum);
 
 //   // getting user input 
 //   retriveText = () => {
