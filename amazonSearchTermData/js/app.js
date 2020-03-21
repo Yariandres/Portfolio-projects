@@ -14,7 +14,7 @@ createDataList =  rowList => {
         <td>${rowData.KeywordorProductTargeting}</td>
         <td id="spend">${rowData.Spend}</td>
         <td id="clicks">${rowData.Clicks}</td>
-        <td id="targetACoS">31</td>
+        <td id="targetACoS">30</td>
         <td id="currentAcos">${rowData.ACoS}</td>
         <td>
           <p id="btnAction" class="btn btn-info" onclick="addRowHandlers()">
