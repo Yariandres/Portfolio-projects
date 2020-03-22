@@ -15,8 +15,7 @@ createDataList =  rowList => {
         <td id="orders" class="text-success font-weight-bolder">${rowData.Orders}</td>
         <td id="clicks" class="text-primary font-weight-bolder">${rowData.Clicks}</td>
         <td>
-          <input type="number" class="form-control" id="targetACoS" placeholder="ACoS" required/>
-          
+          <input type="number" class="form-control" id="targetACoS" placeholder="ACoS" required/>         
         </td>
         <td id="currentAcos">${rowData.ACoS}</td>
         <td>
@@ -59,7 +58,7 @@ addRowHandlers = () => {
           bid.innerHTML = `<small class="alert-warning" id="fieldAlert">You target ACoS must be > than 0</small>`
         } else if (isNaN(resultHTML)) {
           bid.innerHTML = `<small class="alert-warning" id="fieldAlert">Keywords with no ACoS can not be calculated</small>`;          
-        }else {
+        } else {
           bid.innerHTML = resultHTML.toFixed(2);
         }
       }
@@ -70,17 +69,3 @@ addRowHandlers = () => {
   }
 }
 
-
-  // getting user input 
-  // checkUserInput = () => {
-  //   // getting the input field
-  //   var userInput = document.querySelector('#targetACoS').value;
-
-  //   if (!userInput) {
-  //     return console.log("enter a number")
-      
-  //   } else {
-  //     return console.log("condition passed")
-  //     createClickHandler();
-  //   }
-  // }
