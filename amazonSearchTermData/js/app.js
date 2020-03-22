@@ -13,6 +13,7 @@ createDataList =  rowList => {
         <td id="recordID">${rowData.RecordID}</td>
         <td>${rowData.KeywordorProductTargeting}</td>
         <td id="spend">${rowData.Spend}</td>
+        <td id="orders">${rowData.Orders}</td>
         <td id="clicks">${rowData.Clicks}</td>
         <td id="targetACoS">30</td>
         <td id="currentAcos">${rowData.ACoS}</td>

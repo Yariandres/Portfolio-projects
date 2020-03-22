@@ -9,8 +9,15 @@
     Amazon Bulk File Bid Editor
   </title>
 
+  <!-- bootstrap via cdn -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- cudtom css -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- table sorting script -->
+  <script type="text/javascript" src="js/sort-table.js"></script>
 </head>
 
 <body>
@@ -36,19 +43,19 @@
 
     <div class="row">
       <div class="col-md-12">
-        <table id="tableId" class="table table-hover">
+        <table id="tableId" class="table table-hover js-sort-table">
           <thead class="thead-dark">
             <tr id="tableTeaders">
-              <th scope="col">Campaign Name</th>
-              <th scope="col">Id</th>
-              <th scope="col">Keyword</th>
-              <th scope="col">Spend</th>
-              <th scope="col">Clicks</th>
-              <th scope="col">Target</th>
-              <th scope="col">ACoS</th>
+              <th scope="col" class="header-select">Campaign Name</th>
+              <th scope="col" class="header-select">Id</th>
+              <th scope="col" class="header-select">Keyword</th>
+              <th scope="col" class="header-select">Spend</th>
+              <th scope="col" class="header-select">Orders</th>
+              <th scope="col" class="header-select">Clicks</th>
+              <th scope="col" class="header-select">Target</th>
+              <th scope="col" class="header-select">ACoS</th>
               <th scope="col">=</th>
-              <th scope="col">New Bid</th>
-
+              <th scope="col" class="header-select">New Bid</th>
             </tr>
           </thead>
 
@@ -71,10 +78,6 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
   <script src="js/app.js"></script>
-
-
-
-
 </body>
 
 </html>
